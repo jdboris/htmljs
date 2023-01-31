@@ -1,0 +1,77 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      html,
+      body {
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+
+      .product-list {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        padding: 1em;
+        gap: 1em;
+        flex-basis: 250px;
+        flex-grow: 1;
+      }
+
+      label {
+        display: flex;
+        flex-direction: column;
+        gap: 0.1em;
+
+        text-transform: capitalize;
+      }
+
+      input,
+      button {
+        padding: 0.6em 0.8em;
+        width: 100%;
+        font-family: inherit;
+      }
+
+      button {
+        font-size: 1.1em;
+        border: none;
+        color: white;
+        background: #7a8699;
+        font-weight: bold;
+        text-transform: uppercase;
+        border-radius: 7px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <script type="module">
+      import ProductList from "./product-list.js";
+
+      const products = [
+        { name: "phone", price: 399.99 },
+        { name: "tablet", price: 599.99 },
+        { name: "laptop", price: 799.99 },
+        { name: "car", price: 25000.99 },
+        { name: "toy", price: 9.99 },
+      ];
+
+      document.body.append(
+        ProductList({
+          products,
+          onProductSave(product) {
+            console.log("New Product: ", product);
+          },
+        })
+      );
+    </script>
+  </body>
+</html>
