@@ -9,11 +9,19 @@
       html,
       body {
         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        background: #dbdbdb;
       }
 
       .product-list {
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
+        max-width: 900px;
+        padding: 2em;
+        background: white;
       }
 
       form {
@@ -23,6 +31,10 @@
         gap: 1em;
         flex-basis: 250px;
         flex-grow: 1;
+      }
+
+      form > div {
+        text-align: center;
       }
 
       label {
@@ -50,6 +62,11 @@
         border-radius: 7px;
         cursor: pointer;
       }
+
+      img {
+        height: 190px;
+        width: auto;
+      }
     </style>
   </head>
   <body>
@@ -57,11 +74,31 @@
       import ProductList from "./product-list.js";
 
       const products = [
-        { name: "phone", price: 399.99 },
-        { name: "tablet", price: 599.99 },
-        { name: "laptop", price: 799.99 },
-        { name: "car", price: 25000.99 },
-        { name: "toy", price: 9.99 },
+        {
+          name: "Google Pixel 6a",
+          price: 399.99,
+          image: "./img/google-pixel-6a.jpg",
+        },
+        {
+          name: "Apple iPhone 11",
+          price: 799.99,
+          image: "./img/apple-iphone-11.jpg",
+        },
+        {
+          name: "Samsung Galaxy S21",
+          price: 499.99,
+          image: "./img/samsung-galaxy-s21.jpg",
+        },
+        {
+          name: "Total by Verizon",
+          price: 299.99,
+          image: "./img/verizon-total.webp",
+        },
+        {
+          name: "Motorolla Moto G G5",
+          price: 399.99,
+          image: "./img/moto-g-5g.jpg",
+        },
       ];
 
       document.body.append(

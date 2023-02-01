@@ -26,22 +26,24 @@ const ProductForm = ({ product, mode, onProductSave }) => html`
       },
     }}
   >
-    ${Object.keys(product).map(
-      (key) => html`
-        <label>
-          ${key}
-          <input
-            type="text"
-            ${{
-              disabled: mode == "read",
-              value: product[key],
-              oninput() {
-                product[key] = this.value;
-              },
-            }}
-          />
-        </label>
-      `
+    ${Object.keys(product).map((key) =>
+      key == "image"
+        ? html`<div><img ${{ src: product[key] }} /></div>`
+        : html`
+            <label>
+              ${key}
+              <input
+                type="text"
+                ${{
+                  disabled: mode == "read",
+                  value: product[key],
+                  oninput() {
+                    product[key] = this.value;
+                  },
+                }}
+              />
+            </label>
+          `
     )}
     ${mode == "read" &&
     html`
