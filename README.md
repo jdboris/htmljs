@@ -1,11 +1,11 @@
 # htmljs
 
-A simple, but powerful HTML parsing library.
+A simple, but powerful HTML templating library.
 
 # Usage
 
 ```javascript
-import html from "./html.js";
+import html from "https://cdn.jsdelivr.net/gh/jdboris/htmljs@latest/html.js";
 
 const Button = () => html`<button>Submit</button>`;
 
