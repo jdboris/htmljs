@@ -1,6 +1,6 @@
 # htmljs
 
-A simple, but powerful HTML templating library.
+A simple, but powerful HTML templating library. It allows creating UI elements in a declarative way, similar to JSX, but with no dependencies or transpiling.
 
 # Usage
 
