@@ -42,11 +42,7 @@ export default function html(htmlParts, ...values) {
   element.querySelectorAll("[data-node-index]").forEach((placeholder) => {
     const arg = values[Number(placeholder.dataset.nodeIndex)];
     // If invalid type...
-    if (
-      typeof arg == "boolean" ||
-      typeof arg == "null" ||
-      typeof arg == "undefined"
-    ) {
+    if (typeof arg == "boolean" || arg === null || typeof arg == "undefined") {
       // ...don't render.
       placeholder.replaceWith("");
 
@@ -83,7 +79,9 @@ function isValueProperties(value) {
     // ...AND not a Node...
     !(value instanceof Node) &&
     // ...AND not an array...
-    !Array.isArray(value);
+    !Array.isArray(value) &&
+    // ...AND not null...
+    value !== null;
 
   return result;
 }
