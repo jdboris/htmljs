@@ -83,7 +83,9 @@ function isValueProperties(value) {
     // ...AND not a Node...
     !(value instanceof Node) &&
     // ...AND not an array...
-    !Array.isArray(value);
+    !Array.isArray(value) &&
+    // ...AND not null...
+    value !== null;
 
   return result;
 }
