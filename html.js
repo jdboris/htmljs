@@ -2,7 +2,10 @@
  * A tag function that parses the given HTML string and returns the `Element` it forms.
  * It also uses the interpolated values either for properties to assign to `Element`s, or as `Node`s to insert.
  *
- * Example:
+ * @param {string[]} htmlParts
+ * @param {any[]} values
+ *
+ * @example
  * ```
  * const Button = () => html`<button>Submit</button>`;
  *
