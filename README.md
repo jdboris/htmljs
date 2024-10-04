@@ -1,3 +1,5 @@
+{% raw %}
+
 # htmljs
 
 A lightweight, but powerful HTML template engine. It allows creating UI elements in a declarative way, similar to JSX, but with no dependencies or transpiling.
@@ -23,3 +25,5 @@ const Form = () => html`
 
 document.body.append(Form());
 ```
+
+{% endraw %}
