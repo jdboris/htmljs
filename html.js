@@ -41,7 +41,8 @@ export default function html(htmlParts, ...values) {
     })
     .trim();
 
-  const element = template.content.firstElementChild;
+  // NOTE: Must make a clone of the first element using importNode in order for custom elements to be upgraded
+  const element = document.importNode(template.content.firstElementChild, true);
 
   // Replace all the Node placeholders with their respective Nodes...
   element.querySelectorAll("[data-node-index]").forEach((placeholder) => {
