@@ -32,8 +32,10 @@ export default function html(htmlParts, ...values) {
         (isValueProperties(values[i - 1])
           ? // ...then, add a placeholder for properties...
             `data-props-index="${i - 1}"`
-          : // ...otherwise, add a placeholder for a Node.
-            `<script data-node-index="${i - 1}"></script>`) +
+          : typeof values[i - 1] === "object"
+          ? // ...otherwise, add a placeholder for a Node.
+            `<script data-node-index="${i - 1}"></script>`
+          : values[i - 1]) +
         currentHtml
       );
     })
