@@ -36,11 +36,12 @@ export default function html(htmlParts, ...values) {
     })
     .trim();
 
-  const element = template.content.firstChild;
+  const element = template.content.firstElementChild;
 
   // Replace all the Node placeholders with their respective Nodes...
   element.querySelectorAll("[data-node-index]").forEach((placeholder) => {
     const arg = values[Number(placeholder.dataset.nodeIndex)];
+
     // If invalid type...
     if (typeof arg == "boolean" || arg === null || typeof arg == "undefined") {
       // ...don't render.
